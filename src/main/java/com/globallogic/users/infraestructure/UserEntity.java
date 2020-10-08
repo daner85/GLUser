@@ -10,6 +10,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -37,7 +38,11 @@ public class UserEntity {
 	private LocalDateTime lastLogin;
 	private String active;
 	private String token;
-	@OneToMany(cascade = {CascadeType.ALL})
+	@OneToMany(
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	@JoinColumn(name = "id_user")
 	private List<PhoneEntity> phones;
 	
 	

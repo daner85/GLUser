@@ -27,6 +27,12 @@ dependencies {
 	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.2'
 	
+	// mandatory dependencies for using Spock
+	compile "org.codehaus.groovy:groovy:2.5.13"
+	testCompile platform("org.spockframework:spock-bom:2.0-M3-groovy-2.5")
+	testCompile "org.spockframework:spock-core"
+	testCompile "org.spockframework:spock-spring"
+	testCompile "org.spockframework:spock-junit4"
 	
 }
 
